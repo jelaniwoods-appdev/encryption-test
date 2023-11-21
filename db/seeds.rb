@@ -9,9 +9,8 @@
 
 ["alice", "bob", "carol"].each do |name|
   user = User.find_or_create_by(email: "#{name}@example.com", name: name)
-  user.update password: "password"
 end
-
+User.update(password: "password")
 Post.destroy_all
 User.all.each do |user|
   rand(3..8).times do |i|

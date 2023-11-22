@@ -15,6 +15,6 @@ Post.destroy_all
 User.all.each do |user|
   rand(3..8).times do |i|
     desc = (0...50).map { ('a'..'z').to_a[rand(26)] }.join
-    user.posts.create(title: "user.name#{i}", description: desc)
+    user.posts.create(title: "#{user.name}#{i}", description: desc)
   end
 end
